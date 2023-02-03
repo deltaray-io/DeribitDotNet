@@ -4,19 +4,21 @@
     <OutputType>Library</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>8.0</LangVersion>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Matt Craig</Authors>
     <Company />
     <Description>Library for connecting to the Deribit crypto-derivatives exchange via the websocket v2 API</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>© Matt Craig 2020</Copyright>
     <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl>https://github.com/tekr/DeribitDotNet</RepositoryUrl>
+    <RepositoryUrl>https://github.com/deltaray-io/DeribitDotNet</RepositoryUrl>
     <PackageTags>deribit, crypto, exchange</PackageTags>
-    <Version>0.9.5</Version>
+    <Version>0.9.6</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyVersion>0.9.5.0</AssemblyVersion>
-    <FileVersion>0.9.5.0</FileVersion>
+    <AssemblyVersion>0.9.6.0</AssemblyVersion>
+    <FileVersion>0.9.6.0</FileVersion>
+    <PackageId>deltaray.DeribitDotNet</PackageId>
+    <PackageVersion>0.9.6-rc.1</PackageVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
