@@ -12,6 +12,24 @@ namespace DeribitDotNet.Responses
         Closed,
     }
 
+    public class Greeks 
+    {
+        [JsonProperty("delta")]
+        public double? Delta;
+        
+        [JsonProperty("gamma")]
+        public double? Gamma;
+        
+        [JsonProperty("theta")]
+        public double? Theta;
+        
+        [JsonProperty("vega")]
+        public double? Vega;
+        
+        [JsonProperty("rho")]
+        public double? Rho;
+    }
+
     public class Ticker
     {
         [JsonProperty("best_bid_amount")]
@@ -20,12 +38,18 @@ namespace DeribitDotNet.Responses
         [JsonProperty("best_bid_price", NullValueHandling = NullValueHandling.Ignore)]
         public double BestBidPrice;
 
+        [JsonProperty("bid_iv")]
+        public double? BidIv;
+        
         [JsonProperty("best_ask_amount")]
         public int BestAskQty;
 
         [JsonProperty("best_ask_price", NullValueHandling = NullValueHandling.Ignore)]
         public double BestAskPrice;
 
+        [JsonProperty("ask_iv")]
+        public double AskIv;
+        
         [JsonProperty("current_funding")]
         public double? FundingRate;
 
@@ -46,6 +70,9 @@ namespace DeribitDotNet.Responses
 
         [JsonProperty("mark_price")]
         public double MarkPrice;
+        
+        [JsonProperty("mark_iv")]
+        public double? MarkIv;
 
         [JsonProperty("max_price")]
         public double MaxBuyPrice;
@@ -58,12 +85,16 @@ namespace DeribitDotNet.Responses
 
         [JsonProperty("settlement_price")]
         public double? SettlementPrice;
+        
+        [JsonProperty("greeks")]
+        public Greeks Greeks;
 
         public TickerState State;
 
         [JsonProperty("timestamp")]
         [JsonConverter(typeof(CountToDateTimeConverter), false)]
         public DateTime DateTime;
+        
 
         public override string ToString() =>
             $"{nameof(BestBidQty)}: {BestBidQty}, {nameof(BestBidPrice)}: {BestBidPrice}, {nameof(BestAskQty)}: {BestAskQty}, " +
