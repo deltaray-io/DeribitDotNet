@@ -27,16 +27,16 @@ namespace DeribitDotNet.Requests
         public readonly string[] Channels;
 
         public static SubscribeRequest OrderBook(bool batched = false, params string[] symbols) =>
-            new SubscribeRequest("book", batched, true, symbols);
+            new SubscribeRequest("book", batched, false, symbols);
 
         public static SubscribeRequest Trades(bool batched = false, params string[] symbols) =>
-            new SubscribeRequest("trades", batched, true, symbols);
+            new SubscribeRequest("trades", batched, false, symbols);
 
         public static SubscribeRequest Funding(bool batched = false, params string[] symbols) =>
-            new SubscribeRequest("perpetual", batched, true, symbols);
+            new SubscribeRequest("perpetual", batched, false, symbols);
 
         public static SubscribeRequest Ticker(bool batched = false, params string[] symbols) =>
-            new SubscribeRequest("ticker", batched, true, symbols);
+            new SubscribeRequest("ticker", batched, false, symbols);
 
         public static SubscribeRequest Orders(bool batched = false, params string[] symbols) =>
             new SubscribeRequest("user.orders", batched, false, symbols);
