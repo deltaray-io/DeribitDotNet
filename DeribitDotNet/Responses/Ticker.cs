@@ -56,14 +56,26 @@ namespace DeribitDotNet.Responses
         [JsonProperty("delivery_price")]
         public double? DeliveryPrice;
 
+        [JsonProperty("estimated_delivery_price")]
+        public double? EstimatedDeliveryPrice;
+        
         [JsonProperty("funding_8h")]
         public double? FundingRate8HAvg;
 
+        [JsonProperty("greeks")]
+        public Greeks Greeks;
+        
         [JsonProperty("index_price")]
         public double IndexPrice;
 
         [JsonProperty("instrument_name")]
         public string Instrument;
+        
+        [JsonProperty("interest_rate")]
+        public double InterestRate;
+        
+        [JsonProperty("interest_value")]
+        public double InterestValue;
 
         [JsonProperty("last_price")]
         public double LastPrice;
@@ -86,9 +98,12 @@ namespace DeribitDotNet.Responses
         [JsonProperty("settlement_price")]
         public double? SettlementPrice;
         
-        [JsonProperty("greeks")]
-        public Greeks Greeks;
+        [JsonProperty("underlying_index")]
+        public string UnderlyingIndex;
 
+        [JsonProperty("underlying_price")]
+        public double? UnderlyingPrice;
+        
         public TickerState State;
 
         [JsonProperty("timestamp")]
@@ -97,11 +112,16 @@ namespace DeribitDotNet.Responses
         
 
         public override string ToString() =>
-            $"{nameof(BestBidQty)}: {BestBidQty}, {nameof(BestBidPrice)}: {BestBidPrice}, {nameof(BestAskQty)}: {BestAskQty}, " +
-            $"{nameof(BestAskPrice)}: {BestAskPrice}, {nameof(FundingRate)}: {FundingRate}, {nameof(DeliveryPrice)}: " +
-            $"{DeliveryPrice}, {nameof(FundingRate8HAvg)}: {FundingRate8HAvg}, {nameof(IndexPrice)}: {IndexPrice}, " +
-            $"{nameof(Instrument)}: {Instrument}, {nameof(LastPrice)}: {LastPrice}, {nameof(MarkPrice)}: {MarkPrice}, " +
+            $"{nameof(BestBidQty)}: {BestBidQty}, {nameof(BestBidPrice)}: {BestBidPrice}, {nameof(BidIv)}: {BidIv}, " +
+            $"{nameof(BestAskQty)}: {BestAskQty}, {nameof(BestAskPrice)}: {BestAskPrice}, {nameof(AskIv)}: {AskIv}, " +
+            $"{nameof(FundingRate)}: {FundingRate}, {nameof(DeliveryPrice)}: {DeliveryPrice}, " +
+            $"{nameof(EstimatedDeliveryPrice)}: {EstimatedDeliveryPrice}, {nameof(FundingRate8HAvg)}: {FundingRate8HAvg}, " +
+            $"{nameof(Greeks.Delta)}: {Greeks.Delta}, {nameof(Greeks.Gamma)}: {Greeks.Gamma}, {nameof(Greeks.Theta)}: {Greeks.Theta}, " +
+            $"{nameof(Greeks.Vega)}: {Greeks.Vega}, {nameof(Greeks.Rho)}: {Greeks.Rho}, {nameof(IndexPrice)}: {IndexPrice}, " +
+            $"{nameof(Instrument)}: {Instrument}, {nameof(InterestRate)}: {InterestRate}, {nameof(InterestValue)}: {InterestValue}, " +
+            $"{nameof(LastPrice)}: {LastPrice}, {nameof(MarkPrice)}: {MarkPrice}, {nameof(MarkIv)}: {MarkIv}" +
             $"{nameof(MaxBuyPrice)}: {MaxBuyPrice}, {nameof(MinSellPrice)}: {MinSellPrice}, {nameof(OpenInterest)}: {OpenInterest}, " +
-            $"{nameof(SettlementPrice)}: {SettlementPrice}, {nameof(State)}: {State}, {nameof(DateTime)}: {DateTime}";
+            $"{nameof(SettlementPrice)}: {SettlementPrice}, {nameof(UnderlyingIndex)}: {UnderlyingIndex}, {nameof(UnderlyingPrice)}: {UnderlyingPrice}, " +
+            $"{nameof(State)}: {State}, {nameof(DateTime)}: {DateTime}";
     }
 }
