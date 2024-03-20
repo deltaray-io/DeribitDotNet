@@ -19,7 +19,7 @@ namespace DeribitDotNet
 {
     public class DeribitApi : IDisposable
     {
-        public static TimeSpan RequestTimeout = TimeSpan.FromSeconds(120);
+        public static TimeSpan RequestTimeout = TimeSpan.FromSeconds(240);
         public static TimeSpan MarketDataWatchdogTimeout = TimeSpan.FromSeconds(20);
 
         private static readonly TimeSpan HeartbeatInterval = TimeSpan.FromSeconds(15);
